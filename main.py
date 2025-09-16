@@ -1,16 +1,58 @@
-# This is a sample Python script.
+import tkinter as tk
 
-# Press Maj+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class Interface1(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Gestionnaire de tâches")
+        self.geometry("500x650")
+        self.configure(background="#f0f0f0")
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+        titre= tk.Frame(self)
+        titre.pack(side="top", fill="x")
+        self.label = tk.Label(titre,
+                              text='Ma To-do List',
+                              font=("Arial", 20, "bold"),
+                              bg= "#f0f0f0",
+                            )
+        self.label.pack(side="top", fill="x", pady = 10)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+        ajoutertache = tk.Frame(self, bg="#f0f0f0", relief="groove")
+        ajoutertache.pack(side="top", fill="x")
+        entry1 = tk.Entry(ajoutertache)
+        entry1.pack(side="top", fill="x", padx= 150, pady=10)
+        bouton1 = tk.Button(ajoutertache, text="Ajouter la tâche", command='on_click', state="normal")
+        bouton1.pack(side="top")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        listetache = tk.Frame(self, bg="#f0f0f0")
+        listetache.pack(side="top", fill="x")
+        entry2 = tk.Entry(listetache)
+        entry2.pack(side="top", fill="both", padx = 120, pady=20, ipady=90, ipadx=12)
+
+
+        tacheprio= tk.Frame(self, bg="#f0f0f0")
+        tacheprio.pack(side="top", fill="x")
+        v_news = tk.BooleanVar(value=True)
+        case1 = tk.Checkbutton(tacheprio, text="Toutes les tâches sont prioritaires", variable=v_news)
+        case1.pack(side="top", pady= 10)
+
+
+        typetache = tk.Frame(self, bg="#f0f0f0")
+        typetache.pack(side="top", pady=10)
+        civ = tk.StringVar(value="M")
+        boutonradio1_1= tk.Radiobutton(typetache, text="Personnel", variable=civ, value="Personnel").pack(anchor="w")
+        boutonradio1_2 = tk.Radiobutton(typetache, text="Professionnel", variable=civ, value="Professionnel").pack(anchor="w")
+
+
+
+
+
+
+
+
+
+
+if __name__ == "__main__":
+    Interface1().mainloop()
