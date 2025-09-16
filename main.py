@@ -68,6 +68,7 @@ class Interface2(tk.Tk):
 
 
 
+
 if __name__ == "__main__":
     Interface1().mainloop()
     Interface2().mainloop()
