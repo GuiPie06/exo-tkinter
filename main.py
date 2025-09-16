@@ -42,8 +42,16 @@ class Interface1(tk.Tk):
         typetache = tk.Frame(self, bg="#f0f0f0")
         typetache.pack(side="top", pady=10)
         civ = tk.StringVar(value="M")
-        boutonradio1_1= tk.Radiobutton(typetache, text="Personnel", variable=civ, value="Personnel").pack(anchor="w")
-        boutonradio1_2 = tk.Radiobutton(typetache, text="Professionnel", variable=civ, value="Professionnel").pack(anchor="w")
+        tk.Radiobutton(typetache, text="Personnel", variable=civ, value="Personnel").pack(anchor="w")
+        tk.Radiobutton(typetache, text="Professionnel", variable=civ, value="Professionnel").pack(anchor="w")
+
+        notetache = tk.Frame(self, bg="#f0f0f0")
+        notetache.pack(side="top", fill="x", pady=10)
+        titre2 = tk.Label(notetache, text="Notes sur la tâche sélectionnée:", bg="#f0f0f0")
+        titre2.pack(side="top", fill="x")
+        entry3 = tk.Entry(notetache)
+        entry3.pack(side="top", fill="both", pady=20, padx= 50, ipady=90)
+
 
 
 
