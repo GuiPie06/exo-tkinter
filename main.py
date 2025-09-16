@@ -55,7 +55,13 @@ class Interface1(tk.Tk):
 
 
 
+class Interface2(tk.Tk):
+    def __init__(self):
+        super().__init__()
 
+        self.title("Formulaire")
+        self.geometry("600x150")
+        self.configure(background="#f0f0f0")
 
 
 
@@ -64,3 +70,4 @@ class Interface1(tk.Tk):
 
 if __name__ == "__main__":
     Interface1().mainloop()
+    Interface2().mainloop()
