@@ -63,6 +63,62 @@ class Interface2(tk.Tk):
         self.geometry("600x150")
         self.configure(background="#f0f0f0")
 
+        bigframe=tk.Frame(self, bg="#f0f0f0", borderwidth=1, relief="solid")
+        bigframe.pack(side="top", fill="both", pady=15, padx= 5)
+
+        nomemail = tk.Frame(bigframe, bg="#f0f0f0")
+        nomemail.pack(side="left", fill="x", padx = 25, pady=20)
+        labelnom = tk.Label(nomemail, text="Nom :", font=("Arial", 11))
+        labelnom.pack(side="top", fill="x", pady = 5)
+        labalemail = tk.Label(nomemail, text="Email :", font=("Arial", 11))
+        labalemail.pack(side="bottom", fill="x", pady = 5)
+
+
+        entrynomemail = tk.Frame(bigframe, bg="#f0f0f0")
+        entrynomemail.pack(side="left", fill="x", ipadx = 125, pady=20)
+        entrtynom = tk.Entry(entrynomemail)
+        entrtynom.pack(side="top", fill="x", pady = 5)
+        entryemail = tk.Entry(entrynomemail)
+        entryemail.pack(side="top", fill="x", pady = 5)
+
+
+        valider = tk.Frame(bigframe, bg="#f0f0f0")
+        valider.pack(side="left", fill="x", padx = 25, pady=20)
+        boutonvalider = tk.Button(valider, text="Valider", command="on_click", state="normal")
+        boutonvalider.pack(side="top")
+
+
+
+
+class Interface3(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Pannedwindow")
+        self.geometry("900x500")
+        self.configure(background="#f0f0f0")
+
+        listeelement = tk.Frame(self, bg="#eaf2ff", borderwidth=1, relief="groove")
+        listeelement.pack(side="left", fill="x", padx = 10)
+
+        label = tk.Frame(listeelement, bg="#eaf2ff")
+        label.pack(side="top", fill="x", padx = 10, pady=3)
+        labelliste= tk.Label(label, bg="#eaf2ff", text="Liste d'éléments", font=("Arial", 9, "bold"))
+        labelliste.pack(side="left", fill="x")
+
+        liste = tk.Frame(listeelement, bg="#eaf2ff")
+        liste.pack(side="top", fill="x", padx=10, ipady=40)
+        listefruit= tk.Listbox(liste, height=10, bg="#ffffff", selectmode="single", font=("Arial", 8, "bold"))
+        listefruit.pack(side="top", fill="both", expand=True)
+        for item in ("Pomme", "Poire", "Banane", "Ananas", "Mangue"): listefruit.insert("end", item)
+
+        boutons = tk.Frame(listeelement, bg="#eaf2ff")
+        boutons.pack(side="top", fill="x", pady = 5, padx = 10)
+        boutonlire = tk.Button(boutons, text="Lire sélection", command="on_click", state="normal")
+        boutonlire.pack(side="left", padx = 2)
+        boutonsupprimer = tk.Button(boutons, text="Supprimer", command="on_click", state="normal")
+        boutonsupprimer.pack(side="right", padx = 2)
+
 
 
 
@@ -70,5 +126,6 @@ class Interface2(tk.Tk):
 
 
 if __name__ == "__main__":
-    Interface1().mainloop()
-    Interface2().mainloop()
+    # Interface1().mainloop()
+    # Interface2().mainloop()
+    Interface3().mainloop()
