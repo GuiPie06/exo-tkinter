@@ -34,5 +34,35 @@ class Interface1(tk.Tk):
         messagebox.showinfo("Résultat", f"la somme est : {self.calculer()}")
 
 
+
+
+
+class Interface2(tk.Tk):
+    def __init__(self):
+        super().__init__()
+
+        self.title("Calculator")
+        self.geometry("400x400")
+        self.configure(background="#f0f0f0")
+
+
+        fenetrelecture = tk.Frame(self, borderwidth=5, relief="groove")
+        fenetrelecture.pack(side="top", fill="x", pady = 5 , padx = 10)
+        entrylecture = tk.Entry(fenetrelecture, font=("Arial", 12, "bold"))
+        entrylecture.pack(side="top", fill="x", pady = 10, padx = 10, ipady = 15 )
+
+        range1= tk.Frame(self, borderwidth=2, relief="groove")
+        range1.pack(side="top", fill="x")
+        boutonC = tk.Button(range1, text="C", command=self.******)
+        boutonC.pack(side="left", fill="x")
+
+
+
+
+
+
+
+
 if __name__ == "__main__":
-    Interface1().mainloop()
+    # Interface1().mainloop()
+    Interface2().mainloop()
