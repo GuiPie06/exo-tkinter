@@ -53,9 +53,12 @@ class Interface2(tk.Tk):
 
         range1= tk.Frame(self, borderwidth=2, relief="groove")
         range1.pack(side="top", fill="x")
-        boutonC = tk.Button(range1, text="C", command=self.******)
+        boutonC = tk.Button(range1, text="C", ) #command=self.******
         boutonC.pack(side="left", fill="x")
-
+        boutonslash = tk.Button(range1, text="/", )  #command=self.******
+        boutonslash.pack(side="left", fill="x")
+        boutonasterix = tk.Button(range1, text="*", ) #command=self.******
+        boutonasterix.pack(side="left", fill="x")
 
 
 
