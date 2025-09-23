@@ -28,7 +28,7 @@ class Interface1(tk.Tk):
         bouton.pack(side="top", ipadx = 10, pady = 10)
 
     def calculer(self):
-        return self.entry1.get() + self.entry2.get()
+        return float(self.entry1.get()) + float(self.entry2.get())
 
     def affichersomme(self):
         messagebox.showinfo("Résultat", f"la somme est : {self.calculer()}")
