@@ -51,17 +51,39 @@ class Interface2(tk.Tk):
         entrylecture = tk.Entry(fenetrelecture, font=("Arial", 12, "bold"))
         entrylecture.pack(side="top", fill="x", pady = 10, padx = 10, ipady = 15 )
 
-        range1= tk.Frame(self, borderwidth=2, relief="groove")
-        range1.pack(side="top", fill="x")
-        boutonC = tk.Button(range1, text="C", ) #command=self.******
-        boutonC.pack(side="left", fill="x")
+        operateurs = tk.Frame(self, relief="groove")
+        operateurs.pack(side="top", fill="both", expand=True)
+
+        range1= tk.Frame(operateurs, borderwidth=2, relief="groove")
+        range1.pack(side="top", fill="both", expand=True)
+        boutonc = tk.Button(range1, text="C", ) #command=self.******
+        boutonc.pack(side="left", fill="both", expand=True)
         boutonslash = tk.Button(range1, text="/", )  #command=self.******
-        boutonslash.pack(side="left", fill="x")
+        boutonslash.pack(side="left", fill="both", expand=True)
         boutonasterix = tk.Button(range1, text="*", ) #command=self.******
-        boutonasterix.pack(side="left", fill="x")
+        boutonasterix.pack(side="left", fill="both", expand=True)
 
+        range2= tk.Frame(operateurs, borderwidth=2, relief="groove")
+        range2.pack(side="top", fill="both", expand=True, )
+        bouton7 = tk.Button(range2, text="7", )  # command=self.******
+        bouton7.pack(side="left", fill="both", expand=True)
+        bouton8 = tk.Button(range2, text="8", )  # command=self.******
+        bouton8.pack(side="left", fill="both", expand=True)
+        bouton9 = tk.Button(range2, text="9", )  # command=self.******
+        bouton9.pack(side="left", fill="both", expand=True)
+        boutonmoins = tk.Button(range2, text="-", )  # command=self.******
+        boutonmoins.pack(side="left", fill="both", expand=True)
 
-
+        range3= tk.Frame(operateurs, borderwidth=2, relief="groove")
+        range3.pack(side="top", fill="both", expand=True)
+        bouton4 = tk.Button(range3, text="4", )  # command=self.******
+        bouton4.pack(side="left", fill="both", expand=True)
+        bouton5 = tk.Button(range3, text="5", )  # command=self.******
+        bouton5.pack(side="left", fill="both", expand=True)
+        bouton6 = tk.Button(range3, text="6", )  # command=self.******
+        bouton6.pack(side="left", fill="both", expand=True)
+        boutonplus = tk.Button(range3, text="+", )  # command=self.******
+        boutonplus.pack(side="left", fill="both", expand=True)
 
 
 
