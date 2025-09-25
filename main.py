@@ -131,6 +131,12 @@ class Interface4(tk.Tk):
         self.columnconfigure(0, weight=1)
         self.rowconfigure(0, weight=1)
 
+        frm_ppale = tk.Frame(self)
+        frm_ppale.grid(row=0, column=0, sticky="nsew")
+        frm_ppale.columnconfigure(1, weight=1)
+
+        tk.Label(frm_ppale, text="Courriel").grid(row=0, column=0, sticky="nsew")
+
 
 
 
