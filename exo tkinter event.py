@@ -108,8 +108,8 @@ class Interface2(tk.Tk):
     def operateurC(self) -> None:
         self.entrylecture.delete(0, tk.END)
 
-    def ecrire(self, text) -> :
-        return self.entrylecture.insert("end", text)
+    def ecrire(self, text)  :
+        self.entrylecture.insert("end", text)
 
 
 
