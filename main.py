@@ -135,7 +135,7 @@ class Interface4(tk.Tk):
                               font=("Arial", 20, "bold"),
                               bg="#f0f0f0",
                               )
-        self.label.grid(row=0)
+        self.label.grid(row=1)
 
         ajoutertache = tk.Frame(self, bg="#f0f0f0", relief="groove")
         ajoutertache.pack(side="top", fill="x")
