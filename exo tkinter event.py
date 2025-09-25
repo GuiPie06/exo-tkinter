@@ -85,6 +85,23 @@ class Interface2(tk.Tk):
         boutonplus = tk.Button(range3, text="+", )  # command=self.******
         boutonplus.pack(side="left", fill="both", expand=True)
 
+        range4= tk.Frame(operateurs, borderwidth=2, relief="groove")
+        range4.pack(side="top", fill="both", expand=True)
+        bouton1 = tk.Button(range4, text="1", )  # command=self.******
+        bouton1.pack(side="left", fill="both", expand=True)
+        bouton2 = tk.Button(range4, text="2", )  # command=self.******
+        bouton2.pack(side="left", fill="both", expand=True)
+        bouton3 = tk.Button(range4, text="3", )  # command=self.******
+        bouton3.pack(side="left", fill="both", expand=True)
+        boutonegal = tk.Button(range4, text="=", )  # command=self.******
+        boutonegal.pack(side="left", fill="both", expand=True)
+
+        range5 = tk.Frame(operateurs, borderwidth=2, relief="groove")
+        range5.pack(side="top", fill="both", expand=True)
+        bouton0 = tk.Button(range5, text="0", )  # command=self.******
+        bouton0.pack(side="left", fill="both", expand=True)
+        boutonpoint = tk.Button(range5, text=".", )  # command=self.******
+        boutonpoint.pack(side="left", fill="both", expand=True)
 
 
 
