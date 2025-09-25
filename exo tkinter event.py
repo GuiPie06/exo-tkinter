@@ -56,7 +56,7 @@ class Interface2(tk.Tk):
 
         range1= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range1.pack(side="top", fill="both", expand=True)
-        boutonc = tk.Button(range1, text="C", command=self.ecrire("C"), state="normal") #command=self.******
+        boutonc = tk.Button(range1, text="C", command=self.ecrire("C")) #command=self.******
         boutonc.pack(side="left", fill="both", expand=True)
         boutonslash = tk.Button(range1, text="/", )  #command=self.******
         boutonslash.pack(side="left", fill="both", expand=True)
@@ -103,7 +103,12 @@ class Interface2(tk.Tk):
         boutonpoint = tk.Button(range5, text=".", )  # command=self.******
         boutonpoint.pack(side="left", fill="both", expand=True)
 
-    def ecrire(self, text:str):
+
+
+    def operateurC(self) -> None:
+        self.entrylecture.delete(0, tk.END)
+
+    def ecrire(self, text) -> :
         return self.entrylecture.insert("end", text)
 
 

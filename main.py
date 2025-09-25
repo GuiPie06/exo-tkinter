@@ -135,9 +135,18 @@ class Interface4(tk.Tk):
         frm_ppale.grid(row=0, column=0, sticky="nsew")
         frm_ppale.columnconfigure(1, weight=1)
 
-        tk.Label(frm_ppale, text="Courriel").grid(row=0, column=0, sticky="nsew")
+        tk.Label(frm_ppale, text="Courriel").grid(row=0, column=0, sticky="e")
+        email = tk.Entry(frm_ppale)
+        email.grid(row=0, column=1, sticky="we")
 
 
+        tk.Label(frm_ppale, text="Mot de passe").grid(row=1, column=0, sticky="e")
+        pwd = tk.Entry(frm_ppale, show="*")
+        pwd.grid(row=1, column=1, sticky="we")
+
+
+        btn = tk.Button(frm_ppale, text="Valider", )
+        btn.grid(row=0, column=2, rowspan=2, sticky="e")
 
 
 if __name__ == "__main__":
