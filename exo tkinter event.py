@@ -48,15 +48,15 @@ class Interface2(tk.Tk):
 
         fenetrelecture = tk.Frame(self, borderwidth=5, relief="groove")
         fenetrelecture.pack(side="top", fill="x", pady = 5 , padx = 10)
-        entrylecture = tk.Entry(fenetrelecture, font=("Arial", 12, "bold"))
-        entrylecture.pack(side="top", fill="x", pady = 10, padx = 10, ipady = 15 )
+        self.entrylecture = tk.Entry(fenetrelecture, font=("Arial", 12, "bold"))
+        self.entrylecture.pack(side="top", fill="x", pady = 10, padx = 10, ipady = 15 )
 
         operateurs = tk.Frame(self, relief="groove")
         operateurs.pack(side="top", fill="both", expand=True)
 
         range1= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range1.pack(side="top", fill="both", expand=True)
-        boutonc = tk.Button(range1, text="C", ) #command=self.******
+        boutonc = tk.Button(range1, text="C", command=self.ecrire("C"), state="normal") #command=self.******
         boutonc.pack(side="left", fill="both", expand=True)
         boutonslash = tk.Button(range1, text="/", )  #command=self.******
         boutonslash.pack(side="left", fill="both", expand=True)
@@ -102,6 +102,11 @@ class Interface2(tk.Tk):
         bouton0.pack(side="left", fill="both", expand=True)
         boutonpoint = tk.Button(range5, text=".", )  # command=self.******
         boutonpoint.pack(side="left", fill="both", expand=True)
+
+    def ecrire(self, text:str):
+        return self.entrylecture.insert("end", text)
+
+
 
 
 
