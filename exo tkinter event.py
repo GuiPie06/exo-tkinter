@@ -56,51 +56,51 @@ class Interface2(tk.Tk):
 
         range1= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range1.pack(side="top", fill="both", expand=True)
-        boutonc = tk.Button(range1, text="C", command=self.ecrire("C")) #command=self.******
+        boutonc = tk.Button(range1, text="C", command=self.operateurC)
         boutonc.pack(side="left", fill="both", expand=True)
-        boutonslash = tk.Button(range1, text="/", )  #command=self.******
+        boutonslash = tk.Button(range1, text="/", command=lambda: self.ecrire("/"))  #https://stackoverflow.com/questions/70406400/understanding-python-lambda-behavior-with-tkinter-button
         boutonslash.pack(side="left", fill="both", expand=True)
-        boutonasterix = tk.Button(range1, text="*", ) #command=self.******
+        boutonasterix = tk.Button(range1, text="*", command=lambda: self.ecrire("*") )
         boutonasterix.pack(side="left", fill="both", expand=True)
 
         range2= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range2.pack(side="top", fill="both", expand=True, )
-        bouton7 = tk.Button(range2, text="7", )  # command=self.******
+        bouton7 = tk.Button(range2, text="7",command=lambda: self.ecrire("7") )
         bouton7.pack(side="left", fill="both", expand=True)
-        bouton8 = tk.Button(range2, text="8", )  # command=self.******
+        bouton8 = tk.Button(range2, text="8", command=lambda: self.ecrire("8"))
         bouton8.pack(side="left", fill="both", expand=True)
-        bouton9 = tk.Button(range2, text="9", )  # command=self.******
+        bouton9 = tk.Button(range2, text="9", command=lambda: self.ecrire("9"))
         bouton9.pack(side="left", fill="both", expand=True)
-        boutonmoins = tk.Button(range2, text="-", )  # command=self.******
+        boutonmoins = tk.Button(range2, text="-", command=lambda: self.ecrire("-"))
         boutonmoins.pack(side="left", fill="both", expand=True)
 
         range3= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range3.pack(side="top", fill="both", expand=True)
-        bouton4 = tk.Button(range3, text="4", )  # command=self.******
+        bouton4 = tk.Button(range3, text="4", command=lambda: self.ecrire("4"))
         bouton4.pack(side="left", fill="both", expand=True)
-        bouton5 = tk.Button(range3, text="5", )  # command=self.******
+        bouton5 = tk.Button(range3, text="5", command=lambda: self.ecrire("5"))
         bouton5.pack(side="left", fill="both", expand=True)
-        bouton6 = tk.Button(range3, text="6", )  # command=self.******
+        bouton6 = tk.Button(range3, text="6", command=lambda: self.ecrire("6"))
         bouton6.pack(side="left", fill="both", expand=True)
-        boutonplus = tk.Button(range3, text="+", )  # command=self.******
+        boutonplus = tk.Button(range3, text="+", command=lambda: self.ecrire("+"))
         boutonplus.pack(side="left", fill="both", expand=True)
 
         range4= tk.Frame(operateurs, borderwidth=2, relief="groove")
         range4.pack(side="top", fill="both", expand=True)
-        bouton1 = tk.Button(range4, text="1", )  # command=self.******
+        bouton1 = tk.Button(range4, text="1", command=lambda: self.ecrire("1"))
         bouton1.pack(side="left", fill="both", expand=True)
-        bouton2 = tk.Button(range4, text="2", )  # command=self.******
+        bouton2 = tk.Button(range4, text="2", command=lambda: self.ecrire("2"))
         bouton2.pack(side="left", fill="both", expand=True)
-        bouton3 = tk.Button(range4, text="3", )  # command=self.******
+        bouton3 = tk.Button(range4, text="3", command=lambda: self.ecrire("3"))
         bouton3.pack(side="left", fill="both", expand=True)
-        boutonegal = tk.Button(range4, text="=", )  # command=self.******
+        boutonegal = tk.Button(range4, text="=", command=self.calculer)  # command=self.****** calculer
         boutonegal.pack(side="left", fill="both", expand=True)
 
         range5 = tk.Frame(operateurs, borderwidth=2, relief="groove")
         range5.pack(side="top", fill="both", expand=True)
-        bouton0 = tk.Button(range5, text="0", )  # command=self.******
+        bouton0 = tk.Button(range5, text="0", command=lambda: self.ecrire("0"))
         bouton0.pack(side="left", fill="both", expand=True)
-        boutonpoint = tk.Button(range5, text=".", )  # command=self.******
+        boutonpoint = tk.Button(range5, text=".", command=lambda: self.ecrire("."))
         boutonpoint.pack(side="left", fill="both", expand=True)
 
 
@@ -111,8 +111,15 @@ class Interface2(tk.Tk):
     def ecrire(self, text)  :
         self.entrylecture.insert("end", text)
 
-
-
+    def calculer(self):
+        try:
+            ligne = self.entrylecture.get()
+            resultat = eval(ligne) #https://stackoverflow.com/questions/32642178/what-is-the-tkinter-eval-function
+            self.entrylecture.delete(0, "end")
+            self.entrylecture.insert("end", str(resultat))
+        except:
+            self.entrylecture.delete(0, "end")
+            self.entrylecture.insert("end", "ERREUR")
 
 
 if __name__ == "__main__":

@@ -150,7 +150,7 @@ class Interface4(tk.Tk):
 
 
 if __name__ == "__main__":
-    # Interface1().mainloop()
-    # Interface2().mainloop()
+    Interface1().mainloop()
+    Interface2().mainloop()
     # Interface3().mainloop()
     Interface4().mainloop()
