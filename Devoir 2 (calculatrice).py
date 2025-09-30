@@ -58,7 +58,7 @@ class Interface2(tk.Tk):
         bouton2.pack(side="left", fill="both", expand=True)
         bouton3 = tk.Button(range4, text="3", command=lambda: self.ecrire("3"))
         bouton3.pack(side="left", fill="both", expand=True)
-        boutonegal = tk.Button(range4, text="=", command=self.calculer)  # command=self.****** calculer
+        boutonegal = tk.Button(range4, text="=", command=self.calculer)
         boutonegal.pack(side="left", fill="both", expand=True)
 
         range5 = tk.Frame(operateurs, borderwidth=2, relief="groove")
