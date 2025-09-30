@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="devoir 2 bonus">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Devoir 2 (calculatrice).py" beforeDir="false" afterPath="$PROJECT_DIR$/Devoir 2 (calculatrice).py" afterDir="false" />
-    </list>
+    <list default="true" id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="devoir 2 bonus" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,7 +28,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/GuiPie06/exo-tkinter&quot;,
+    &quot;url&quot;: &quot;https://github.com/GuiPie06/exo-tkinter.git&quot;,
     &quot;accountId&quot;: &quot;0e3cf65f-7707-4d71-8dee-49745111a945&quot;
   }
 }</component>
@@ -138,10 +135,11 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
+        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="" />
@@ -214,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759181872021</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="devoir 2 bonus">
+      <option name="closed" value="true" />
+      <created>1759255984129</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1759255984129</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,10 +237,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="0" />
     <MESSAGE value="devoir 2 COMPLET" />
-    <option name="LAST_COMMIT_MESSAGE" value="devoir 2 COMPLET" />
+    <MESSAGE value="devoir 2 bonus" />
+    <option name="LAST_COMMIT_MESSAGE" value="devoir 2 bonus" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/exo_tkinter$Devoir_2__calculatrice_.coverage" NAME="Devoir 2 (calculatrice) Coverage Results" MODIFIED="1759201372864" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/exo_tkinter$Devoir_2__calculatrice_.coverage" NAME="Devoir 2 (calculatrice) Coverage Results" MODIFIED="1759255861277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/exo_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1759180209413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/exo_tkinter$exo_tkinter_event.coverage" NAME="exo tkinter event Coverage Results" MODIFIED="1759181807354" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
