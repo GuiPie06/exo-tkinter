@@ -1,0 +1,211 @@
+Index: main.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import tkinter as tk\r\n\r\nclass Interface1(tk.Tk):\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n        self.title(\"Gestionnaire de tâches\")\r\n        self.geometry(\"500x650\")\r\n        self.configure(background=\"#f0f0f0\")\r\n\r\n\r\n        titre= tk.Frame(self)\r\n        titre.pack(side=\"top\", fill=\"x\")\r\n        self.label = tk.Label(titre,\r\n                              text='Ma To-do List',\r\n                              font=(\"Arial\", 20, \"bold\"),\r\n                              bg= \"#f0f0f0\",\r\n                            )\r\n        self.label.pack(side=\"top\", fill=\"x\", pady = 10)\r\n\r\n\r\n        ajoutertache = tk.Frame(self, bg=\"#f0f0f0\", relief=\"groove\")\r\n        ajoutertache.pack(side=\"top\", fill=\"x\")\r\n        entry1 = tk.Entry(ajoutertache)\r\n        entry1.pack(side=\"top\", fill=\"x\", padx= 150, pady=10)\r\n        bouton1 = tk.Button(ajoutertache, text=\"Ajouter la tâche\", command='on_click', state=\"normal\")\r\n        bouton1.pack(side=\"top\")\r\n\r\n        listetache = tk.Frame(self, bg=\"#f0f0f0\")\r\n        listetache.pack(side=\"top\", fill=\"x\")\r\n        entry2 = tk.Entry(listetache)\r\n        entry2.pack(side=\"top\", fill=\"both\", padx = 120, pady=20, ipady=90, ipadx=12)\r\n\r\n\r\n        tacheprio= tk.Frame(self, bg=\"#f0f0f0\")\r\n        tacheprio.pack(side=\"top\", fill=\"x\")\r\n        v_news = tk.BooleanVar(value=True)\r\n        case1 = tk.Checkbutton(tacheprio, text=\"Toutes les tâches sont prioritaires\", variable=v_news)\r\n        case1.pack(side=\"top\", pady= 10)\r\n\r\n\r\n        typetache = tk.Frame(self, bg=\"#f0f0f0\")\r\n        typetache.pack(side=\"top\", pady=10)\r\n        civ = tk.StringVar(value=\"M\")\r\n        tk.Radiobutton(typetache, text=\"Personnel\", variable=civ, value=\"Personnel\").pack(anchor=\"w\")\r\n        tk.Radiobutton(typetache, text=\"Professionnel\", variable=civ, value=\"Professionnel\").pack(anchor=\"w\")\r\n\r\n        notetache = tk.Frame(self, bg=\"#f0f0f0\")\r\n        notetache.pack(side=\"top\", fill=\"x\", pady=10)\r\n        titre2 = tk.Label(notetache, text=\"Notes sur la tâche sélectionnée:\", bg=\"#f0f0f0\")\r\n        titre2.pack(side=\"top\", fill=\"x\")\r\n        entry3 = tk.Entry(notetache)\r\n        entry3.pack(side=\"top\", fill=\"both\", pady=20, padx= 50, ipady=90)\r\n\r\n\r\n\r\n\r\nclass Interface2(tk.Tk):\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n        self.title(\"Formulaire\")\r\n        self.geometry(\"600x150\")\r\n        self.configure(background=\"#f0f0f0\")\r\n\r\n        bigframe=tk.Frame(self, bg=\"#f0f0f0\", borderwidth=1, relief=\"solid\")\r\n        bigframe.pack(side=\"top\", fill=\"both\", pady=15, padx= 5)\r\n\r\n        nomemail = tk.Frame(bigframe, bg=\"#f0f0f0\")\r\n        nomemail.pack(side=\"left\", fill=\"x\", padx = 25, pady=20)\r\n        labelnom = tk.Label(nomemail, text=\"Nom :\", font=(\"Arial\", 11))\r\n        labelnom.pack(side=\"top\", fill=\"x\", pady = 5)\r\n        labalemail = tk.Label(nomemail, text=\"Email :\", font=(\"Arial\", 11))\r\n        labalemail.pack(side=\"bottom\", fill=\"x\", pady = 5)\r\n\r\n\r\n        entrynomemail = tk.Frame(bigframe, bg=\"#f0f0f0\")\r\n        entrynomemail.pack(side=\"left\", fill=\"x\", ipadx = 125, pady=20)\r\n        entrtynom = tk.Entry(entrynomemail)\r\n        entrtynom.pack(side=\"top\", fill=\"x\", pady = 5)\r\n        entryemail = tk.Entry(entrynomemail)\r\n        entryemail.pack(side=\"top\", fill=\"x\", pady = 5)\r\n\r\n\r\n        valider = tk.Frame(bigframe, bg=\"#f0f0f0\")\r\n        valider.pack(side=\"left\", fill=\"x\", padx = 25, pady=20)\r\n        boutonvalider = tk.Button(valider, text=\"Valider\", command=\"on_click\", state=\"normal\")\r\n        boutonvalider.pack(side=\"top\")\r\n\r\n\r\n\r\n\r\nclass Interface3(tk.Tk):\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n        self.title(\"Pannedwindow\")\r\n        self.geometry(\"900x500\")\r\n        self.configure(background=\"#f0f0f0\")\r\n\r\n        listeelement = tk.Frame(self, bg=\"#eaf2ff\", borderwidth=1, relief=\"groove\")\r\n        listeelement.pack(side=\"left\", fill=\"x\", padx = 10)\r\n\r\n        label = tk.Frame(listeelement, bg=\"#eaf2ff\")\r\n        label.pack(side=\"top\", fill=\"x\", padx = 10, pady=3)\r\n        labelliste= tk.Label(label, bg=\"#eaf2ff\", text=\"Liste d'éléments\", font=(\"Arial\", 9, \"bold\"))\r\n        labelliste.pack(side=\"left\", fill=\"x\")\r\n\r\n        liste = tk.Frame(listeelement, bg=\"#eaf2ff\")\r\n        liste.pack(side=\"top\", fill=\"x\", padx=10, ipady=40)\r\n        listefruit= tk.Listbox(liste, height=10, bg=\"#ffffff\", selectmode=\"single\", font=(\"Arial\", 8, \"bold\"))\r\n        listefruit.pack(side=\"top\", fill=\"both\", expand=True)\r\n        for item in (\"Pomme\", \"Poire\", \"Banane\", \"Ananas\", \"Mangue\"): listefruit.insert(\"end\", item)\r\n\r\n        boutons = tk.Frame(listeelement, bg=\"#eaf2ff\")\r\n        boutons.pack(side=\"top\", fill=\"x\", pady = 5, padx = 10)\r\n        boutonlire = tk.Button(boutons, text=\"Lire sélection\", command=\"on_click\", state=\"normal\")\r\n        boutonlire.pack(side=\"left\", padx = 2)\r\n        boutonsupprimer = tk.Button(boutons, text=\"Supprimer\", command=\"on_click\", state=\"normal\")\r\n        boutonsupprimer.pack(side=\"right\", padx = 2)\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    # Interface1().mainloop()\r\n    # Interface2().mainloop()\r\n    Interface3().mainloop()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main.py b/main.py
+--- a/main.py	(revision dfab1a50cd359bbdf4438ec314a57221f64736a9)
++++ b/main.py	(date 1758753661295)
+@@ -126,6 +126,6 @@
+ 
+ 
+ if __name__ == "__main__":
+-    # Interface1().mainloop()
+-    # Interface2().mainloop()
++    Interface1().mainloop()
++    Interface2().mainloop()
+     Interface3().mainloop()
+\ No newline at end of file
+Index: exo tkinter event.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import tkinter as tk\r\nfrom tkinter import messagebox\r\n\r\n\r\nclass Interface1(tk.Tk):\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n        self.title(\"Interface Simple\")\r\n        self.geometry(\"400x400\")\r\n        self.configure(background=\"#f0f0f0\")\r\n\r\n        nb1 = tk.Frame(self)\r\n        nb1.pack(side=\"top\", fill=\"x\", pady= 20)\r\n        label1 = tk.Label(nb1, text=\"Nombre 1 :\")\r\n        label1.pack(side=\"top\", fill=\"x\")\r\n        self.entry1 = tk.Entry(nb1)\r\n        self.entry1.pack(side=\"top\", ipadx = 10)\r\n\r\n        nb2 = tk.Frame(self)\r\n        nb2.pack(side=\"top\", fill=\"x\", pady = 20)\r\n        label2 = tk.Label(nb2, text=\"Nombre 2 :\")\r\n        label2.pack(side=\"top\", fill=\"x\")\r\n        self.entry2 = tk.Entry(nb2)\r\n        self.entry2.pack(side=\"top\", ipadx=10)\r\n\r\n        bouton = tk.Button(self, text=\"Calculer\", command=self.affichersomme)\r\n        bouton.pack(side=\"top\", ipadx = 10, pady = 10)\r\n\r\n    def calculer(self):\r\n        return float(self.entry1.get()) + float(self.entry2.get())\r\n\r\n    def affichersomme(self):\r\n        messagebox.showinfo(\"Résultat\", f\"la somme est : {self.calculer()}\")\r\n\r\n\r\n\r\n\r\n\r\nclass Interface2(tk.Tk):\r\n    def __init__(self):\r\n        super().__init__()\r\n\r\n        self.title(\"Calculator\")\r\n        self.geometry(\"400x400\")\r\n        self.configure(background=\"#f0f0f0\")\r\n\r\n\r\n        fenetrelecture = tk.Frame(self, borderwidth=5, relief=\"groove\")\r\n        fenetrelecture.pack(side=\"top\", fill=\"x\", pady = 5 , padx = 10)\r\n        entrylecture = tk.Entry(fenetrelecture, font=(\"Arial\", 12, \"bold\"))\r\n        entrylecture.pack(side=\"top\", fill=\"x\", pady = 10, padx = 10, ipady = 15 )\r\n\r\n        range1= tk.Frame(self, borderwidth=2, relief=\"groove\")\r\n        range1.pack(side=\"top\", fill=\"x\")\r\n        boutonC = tk.Button(range1, text=\"C\", ) #command=self.******\r\n        boutonC.pack(side=\"left\", fill=\"x\")\r\n        boutonslash = tk.Button(range1, text=\"/\", )  #command=self.******\r\n        boutonslash.pack(side=\"left\", fill=\"x\")\r\n        boutonasterix = tk.Button(range1, text=\"*\", ) #command=self.******\r\n        boutonasterix.pack(side=\"left\", fill=\"x\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    # Interface1().mainloop()\r\n    Interface2().mainloop()
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/exo tkinter event.py b/exo tkinter event.py
+--- a/exo tkinter event.py	(revision dfab1a50cd359bbdf4438ec314a57221f64736a9)
++++ b/exo tkinter event.py	(date 1758753344850)
+@@ -67,5 +67,5 @@
+ 
+ 
+ if __name__ == "__main__":
+-    # Interface1().mainloop()
++    Interface1().mainloop()
+     Interface2().mainloop()
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"Black\">\r\n    <option name=\"sdkName\" value=\"Python 3.13 (PythonProject2)\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision dfab1a50cd359bbdf4438ec314a57221f64736a9)
++++ b/.idea/misc.xml	(date 1758753314786)
+@@ -3,4 +3,5 @@
+   <component name="Black">
+     <option name="sdkName" value="Python 3.13 (PythonProject2)" />
+   </component>
++  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.13 (2)" project-jdk-type="Python SDK" />
+ </project>
+\ No newline at end of file
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"8f52ba0f-9b81-44b5-9c9c-7b7ffa192853\" name=\"Changes\" comment=\"0\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"GuiPie06\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\"><![CDATA[{\r\n  \"selectedUrlAndAccountId\": {\r\n    \"url\": \"https://github.com/GuiPie06/exo-tkinter\",\r\n    \"accountId\": \"0e3cf65f-7707-4d71-8dee-49745111a945\"\r\n  }\r\n}]]></component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"32nQwtXn6BexsIAwCNHTOvhM6ZA\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"foldersAlwaysOnTop\" value=\"false\" />\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n    <option name=\"sortByType\" value=\"true\" />\r\n    <option name=\"sortKey\" value=\"BY_TYPE\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,\r\n    &quot;Python.main.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"PythonProject2\" />\r\n      <option name=\"ENV_FILES\" value=\"\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"8f52ba0f-9b81-44b5-9c9c-7b7ffa192853\" name=\"Changes\" comment=\"\" />\r\n      <created>1758054097581</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1758054097581</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758054155236</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758054155236</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758058650853</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758058650853</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758058980226</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758058980226</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758059148263</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758059148263</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758059363873</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758059363873</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"0\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1758660947516</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1758660947516</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"7\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"0\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"0\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dfab1a50cd359bbdf4438ec314a57221f64736a9)
++++ b/.idea/workspace.xml	(date 1759180173234)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="0" />
++    <list default="true" id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="0">
++      <change beforePath="$PROJECT_DIR$/.idea/PythonProject2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonProject2.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/exo tkinter event.py" beforeDir="false" afterPath="$PROJECT_DIR$/exo tkinter event.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -13,15 +19,15 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "GuiPie06"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;GuiPie06&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="GithubPullRequestsUISettings"><![CDATA[{
+   "selectedUrlAndAccountId": {
+-    "url": "https://github.com/GuiPie06/exo-tkinter",
++    "url": "https://github.com/GuiPie06/exo-tkinter.git",
+     "accountId": "0e3cf65f-7707-4d71-8dee-49745111a945"
+   }
+ }]]></component>
+@@ -36,16 +42,40 @@
+     <option name="sortByType" value="true" />
+     <option name="sortKey" value="BY_TYPE" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "ModuleVcsDetector.initialDetectionPerformed": "true",
++    "Python.exo tkinter event.executor": "Run",
++    "Python.main.executor": "Run",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "RunOnceActivity.git.unshallow": "true",
++    "git-widget-placeholder": "master"
+   }
+-}</component>
+-  <component name="RunManager">
++}]]></component>
++  <component name="RunManager" selected="Python.exo tkinter event">
++    <configuration name="exo tkinter event" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++      <module name="PythonProject2" />
++      <option name="ENV_FILES" value="" />
++      <option name="INTERPRETER_OPTIONS" value="" />
++      <option name="PARENT_ENVS" value="true" />
++      <envs>
++        <env name="PYTHONUNBUFFERED" value="1" />
++      </envs>
++      <option name="SDK_HOME" value="" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
++      <option name="IS_MODULE_SDK" value="true" />
++      <option name="ADD_CONTENT_ROOTS" value="true" />
++      <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/exo tkinter event.py" />
++      <option name="PARAMETERS" value="" />
++      <option name="SHOW_COMMAND_LINE" value="false" />
++      <option name="EMULATE_TERMINAL" value="false" />
++      <option name="MODULE_MODE" value="false" />
++      <option name="REDIRECT_INPUT" value="false" />
++      <option name="INPUT_FILE" value="" />
++      <method v="2" />
++    </configuration>
+     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="PythonProject2" />
+       <option name="ENV_FILES" value="" />
+@@ -59,6 +89,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
++      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+@@ -70,6 +101,7 @@
+     </configuration>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Python.exo tkinter event" />
+         <item itemvalue="Python.main" />
+       </list>
+     </recent_temporary>
+@@ -77,10 +109,11 @@
+   <component name="SharedIndexes">
+     <attachedChunks>
+       <set>
+-        <option value="bundled-python-sdk-e0ed3721d81e-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.25410.159" />
++        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+       </set>
+     </attachedChunks>
+   </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+       <changelist id="8f52ba0f-9b81-44b5-9c9c-7b7ffa192853" name="Changes" comment="" />
+@@ -155,4 +188,8 @@
+     <MESSAGE value="0" />
+     <option name="LAST_COMMIT_MESSAGE" value="0" />
+   </component>
++  <component name="com.intellij.coverage.CoverageDataManagerImpl">
++    <SUITE FILE_PATH="coverage/exo_tkinter$main.coverage" NAME="main Coverage Results" MODIFIED="1758753661301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++    <SUITE FILE_PATH="coverage/exo_tkinter$exo_tkinter_event.coverage" NAME="exo tkinter event Coverage Results" MODIFIED="1758753344857" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
++  </component>
+ </project>
+\ No newline at end of file
+Index: .idea/PythonProject2.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<module type=\"PYTHON_MODULE\" version=\"4\">\r\n  <component name=\"NewModuleRootManager\">\r\n    <content url=\"file://$MODULE_DIR$\">\r\n      <excludeFolder url=\"file://$MODULE_DIR$/.venv\" />\r\n    </content>\r\n    <orderEntry type=\"jdk\" jdkName=\"Python 3.13 (PythonProject2)\" jdkType=\"Python SDK\" />\r\n    <orderEntry type=\"sourceFolder\" forTests=\"false\" />\r\n  </component>\r\n</module>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/PythonProject2.iml b/.idea/PythonProject2.iml
+--- a/.idea/PythonProject2.iml	(revision dfab1a50cd359bbdf4438ec314a57221f64736a9)
++++ b/.idea/PythonProject2.iml	(date 1758753314779)
+@@ -4,7 +4,7 @@
+     <content url="file://$MODULE_DIR$">
+       <excludeFolder url="file://$MODULE_DIR$/.venv" />
+     </content>
+-    <orderEntry type="jdk" jdkName="Python 3.13 (PythonProject2)" jdkType="Python SDK" />
++    <orderEntry type="jdk" jdkName="Python 3.13 (2)" jdkType="Python SDK" />
+     <orderEntry type="sourceFolder" forTests="false" />
+   </component>
+ </module>
+\ No newline at end of file
